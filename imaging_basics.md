@@ -173,7 +173,7 @@ Answers:
 
 ## JPEG Compression
 
-![[jpeg_compression.png]]
+![[Computer Vision/Images/jpeg_compression.png]]
 
 ## Digital Images
 - Stored as a tensor (3D array) of values
