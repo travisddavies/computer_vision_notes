@@ -7,6 +7,7 @@ These are my notes for Computer Vision, COMP90086 at the University of Melbourne
 
 ## Table Of Contents
 1. [Imaging Basics](imaging_basics.md)
+2. [Spatial Filtering](spatial_filtering.md)
 11. [Features](features.md)
 12. [Feature Matching](feature_matching.md)
 13. [Depth and Stereo](depth_and_stereo.md)
