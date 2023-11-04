@@ -1,5 +1,5 @@
 # Computer Vision Notes
-These are my notes for Computer Vision, COMP90086 at the University of Melbourne. Given Tom and Kris's rather lean method of teaching (to say the least), I've tried to add more detail with the lecture slides.
+These are my notes for Computer Vision, COMP90086 at the University of Melbourne. Given Tom and Kris's rather lean method of teaching, I've tried to add more detail with the lecture slides.
 
 ### Note
 - These notes were written in Obsidian, there may be formatting bugs if read via GitHub.
