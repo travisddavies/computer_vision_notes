@@ -155,6 +155,11 @@ $$
 
 ![[after_thresholding-canny.png]]
 
+## Canny Edge Detector: General Process
+1. Denoise the image with Gaussian filter
+2. Calculate the gradients of the image
+3. Apply non-max suppression on the edges of the image
+
 # Edges for Image Recognition
 
 ## Edge Features in Neural Networks
