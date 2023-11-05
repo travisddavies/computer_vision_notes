@@ -11,6 +11,8 @@ These are my notes for Computer Vision, COMP90086 at the University of Melbourne
 3. [Frequency Filtering](frequency_filtering.md)
 4. [Light, Colour & Shadow](light.md)
 5. [Edge Detection](edges.md)
+6. [Convolutional Neural Networks I](convolutional_neural_networks1.md)
+7. [Convolutional Neural Networks II](convolutional_neural_networks2.md)
 10. [Features](features.md)
 11. [Feature Matching](feature_matching.md)
 12. [Depth and Stereo](depth_and_stereo.md)
