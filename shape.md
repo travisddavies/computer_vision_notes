@@ -141,11 +141,16 @@ $$
 
 ## Eigenfaces
 - Problem: Usually we can't assume faces appear in consistent alignment (or consistent lighting)!
+	- Remember - faces don't always line up!
 - To model faces under real-world conditions, we need models that can consider shape/pose
 
 ## Active Appearance Models
 - Labels corresponding landmark points in each image
+	- This done by manually marking keypoints on a face - eyebrows, mouth, eyes, mouth, jaw, etc
 - Warp images onto the mean shape to get shape-free texture
+	- What this means is that we are going to warp the faces as to move the keypoints of the faces so that they line up. 
+	- This turns the faces into a mean face. This is to allow us to properly accommodate for the features of the face, such as eyes, mouth, face texture, etc.
+	 - From here, we can then do a more meaningful PCA on the faces
 
 ![[active_appearance_models.png]]
 
@@ -175,15 +180,18 @@ $$
 ![[3d_face_matching.png]]
 
 ## 3D Face Model Results
+- With the shape reconstruction and texture reconstruction, we can then manipulate the face to make new facial expressions!
 
 ![[3d_face_model_results.png]]
 
 ## Application: Facial Recognition
 - Most recognition algorithms use a shape model to align faces as a first step
+- Below is an example of that
 
 ![[application_facial_recognition.png]]
 
 - Once faces are aligned, a standard CNN pipeline can be trained for face recognition
 - Why is alignment critical for CNNs?
+	- It just creates more work for the CNN if the faces aren't aligned, more efficient to first align them
 
 ![[application_face_recognition2.png]]
