@@ -119,16 +119,23 @@ $$
 ## Eigenfaces
 - If faces are aligned, pixel luminance values are sufficient to capture face shape
 - Simple pixel-based model: eigenfaces
+- We basically find how much a certain face varies from the mean of our stack of faces, and then use this to find our face
+- We will therefore use our faces as vectors for this task
 
 ![[eigenfaces.png]]
 
 ## Eigenfaces Algorithm
 - Each face is represented as a vector to the mean face image
 - Parameters of face shape are obtained from PCA of face vectors
+- Principle component analysis is performed on the **difference** between the face vector in focus and the mean face vector
 
 ![[eigenfaces_algo.png]]
 
 - Principle components of face vectors:
+- The first image shows that the largest variation comes from the top of the head, because of hair colour.
+- The second image shows that the largest variation comes from lighting making one side of the face brighter than the other
+- The third one shows that the light has shifted to the front of the face, and has darker areas around the edges
+- Notice how the last two images hold very little information about the face. This shows that we want to only take the first $n$ faces to be able to successfully reconstruct our face, because these provide a good enough reconstruct to face.
 
 ![[eigenfaces_alago2.png]]
 
