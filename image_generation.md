@@ -238,3 +238,4 @@
 - More recent VAEs use better image representations to reduce blur
 
 ![[final_note.png]]
+
