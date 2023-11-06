@@ -108,3 +108,75 @@ $$
 - Active contours fit a shape boundary
 - Tries to find an optimal shape which is both well-fit to the edges and fairly simple (smooth, compact)
 - Works well to segment objects with uniform appearance, moving objects
+
+# Face Models
+
+## Face Models
+- It's difficult to develop a general-purpose model of shape that can represent all possible shapes well
+- However, it is possible to develop parametric models for particular classes of shape
+- One very widely-studied class of shapes is the human face
+
+## Eigenfaces
+- If faces are aligned, pixel luminance values are sufficient to capture face shape
+- Simple pixel-based model: eigenfaces
+
+![[eigenfaces.png]]
+
+## Eigenfaces Algorithm
+- Each face is represented as a vector to the mean face image
+- Parameters of face shape are obtained from PCA of face vectors
+
+![[eigenfaces_algo.png]]
+
+- Principle components of face vectors:
+
+![[eigenfaces_alago2.png]]
+
+## Eigenfaces
+- Problem: Usually we can't assume faces appear in consistent alignment (or consistent lighting)!
+- To model faces under real-world conditions, we need models that can consider shape/pose
+
+## Active Appearance Models
+- Labels corresponding landmark points in each image
+- Warp images onto the mean shape to get shape-free texture
+
+![[active_appearance_models.png]]
+
+- Obtain "shape", "texture", and "appearance" (shape+texture) parameters through PCA
+
+![[active_appearance_mdoels2.png]]
+
+- To fit the model to a new face, use gradient descent to minimise difference between model and image
+- Applications: face synthesis, face segmentation
+
+![[active_appearance_models4.png]]
+
+- Active appearance models separate shape and texture
+	- Allows alignment of facial features, even when images are not aligned
+- Problem: Shape is represented using 2D contours
+	- Can't separate face shape vs. pose
+	- Can't separate surface colour vs. lighting
+
+## 3D Face Models
+- 3D version of active appearance model: morphable 3D mesh + texture map
+- Parameters based on PCA of a large 3D dataset
+
+![[3d_face_models.png]]
+
+## 3D Face Matching
+
+![[3d_face_matching.png]]
+
+## 3D Face Model Results
+
+![[3d_face_model_results.png]]
+
+## Application: Facial Recognition
+- Most recognition algorithms use a shape model to align faces as a first step
+
+![[application_facial_recognition.png]]
+
+- Once faces are aligned, a standard CNN pipeline can be trained for face recognition
+- Why is alignment critical for CNNs?
+
+![[application_face_recognition2.png]]
