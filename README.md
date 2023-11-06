@@ -22,3 +22,4 @@ These are my notes for Computer Vision, COMP90086 at the University of Melbourne
 14. [Texture](texture.md)
 15. [Shape](shape.md)
 16. [Image Generation](image_generation.md)
+17. [Generative Adversarial Networks (GANs)](gans.md)
