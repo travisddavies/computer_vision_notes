@@ -1,7 +1,7 @@
 # Texture
 ## Shape and Texture
 
-![[shape_and_texture.png]]
+![[Computer Vision/Images/shape_and_texture.png]]
 
 # What is a Texture?
 - A definition from image processing:
