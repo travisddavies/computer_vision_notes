@@ -58,7 +58,7 @@
 - Input is a label
 - Output is a probability density function over images $P(x|y)$
 
-![[conditional_generative_model.png]]
+![[Computer Vision/Images/conditional_generative_model.png]]
 
 ## (Unconditional) Generative Model
 - Output is a probability distribution $P(x)$
