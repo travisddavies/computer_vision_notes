@@ -21,3 +21,4 @@ These are my notes for Computer Vision, COMP90086 at the University of Melbourne
 13. [Multiview Depth](multiview_depth.md)
 14. [Texture](texture.md)
 15. [Shape](shape.md)
+16. [Image Generation](image_generation.md)
