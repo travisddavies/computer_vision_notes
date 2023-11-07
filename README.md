@@ -3,7 +3,12 @@ These are my notes for Computer Vision, COMP90086 at the University of Melbourne
 
 ### Note
 - These notes should be read in [Obsidian](https://obsidian.md/), there may be formatting bugs if read via GitHub.
-- These notes are still a work in progress.
+
+To get the notes, simply use the following:
+
+```
+git clone git@github.com:travisddavies/computer_vision_notes.git
+```
 
 ## Table Of Contents
 1. [Imaging Basics](imaging_basics.md)
