@@ -10,7 +10,7 @@
 
 ## Instance Segmentation
 
-![[instance_segmentation.png]]
+![[Computer Vision/Images/instance_segmentation.png]]
 
 ![[instance_segmentation2.png]]
 
