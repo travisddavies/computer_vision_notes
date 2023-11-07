@@ -24,3 +24,5 @@ These are my notes for Computer Vision, COMP90086 at the University of Melbourne
 16. [Image Generation](image_generation.md)
 17. [Generative Adversarial Networks (GANs)](gans.md)
 18. [Image Segmentation I](image_segmentation1.md)
+19. [Image Segmentation II](image_segmentation2.md)
+20. [Object Detection I](object_detection1.md)
