@@ -89,6 +89,10 @@
 
 ![[mean_shift_parameters.png]]
 
+## Important to Note:
+- Pixel clustering separates colour regions - regions may not correspond to objects
+- For example, a zebra with black and white stripes will cluster each stripe into many clusters
+
 # Superpixels
 
 ## Superpixels
@@ -107,7 +111,7 @@
 	- For each centre $c_k$, check an N x N neighbourhood around $c_k$ to find the pixel with lowest gradient. Set $c_k$ to this pixel's $[x,y,l,a,b]$
 
 - For each cluster centre $c_k$:
-	- In a 2M x 2M square neighbourhood around $c_k$, measure pixel similarity to $c_k$
+	- In a $2M$ x $2M$ square neighbourhood around $c_k$, measure pixel similarity to $c_k$
 	- Assign pixels with similarity < threshold to cluster $k$
 	- Compute new cluster centre $c_k$
 - Repeat until average change in cluster centres (L1 distance) falls below a threshold
@@ -160,6 +164,7 @@ cut(A,B) = \sum_{u \in A , v \in B} w(u,v)
 $$
 
 $w(u,v)$ represents the weight of edge connecting $u$ and $v$
+- This means we are removing the vertices that have the lowest sum of edge weights
 
 ## Graph Cuts
 - Not ideal for image segmentation - tends to create small, isolated sets
@@ -178,13 +183,18 @@ $$
 Ncut(A,B) = \frac{\sum_{u \in A, v \in B}w(u,v)}{\sum_{u \in A, t \in V} w(u,t)} + \frac{\sum_{u \in A, v \in B}w(u, v)}{\sum_{v \in B, t \in V}w(v,t)}
 $$
 
+- What this means is that we will normalise the cut of one vertex with its weights associated with the entire graph (i.e., all the edges of the vertex in question), and do the same for the second vertex.
+- This stops us from having small regions in our segmented images
+
 ## Normalised Cuts Results
+- This is the result of normalised cut, which is starting to give us much more reasonably looking
 
 ![[normalised_cuts_results.png]]
 
 ## GrabCut
 - Segments image pixels into just two classes: foreground (object) and background
 - Uses colour clustering + graph cuts to find optimal classification of pixels into each class
+- It forces the corners of the box to be background and then finds the pixels in the box that should be foreground
 
 ![[grabcut1.png]]
 
@@ -202,9 +212,9 @@ $$
 - $\alpha$ indicates label of each pixel (foreground or background)
 - Iterate until convergence:
 	- Find graph cut (label assignment) to minimise
- 
 		![[graphcut_formula.png]]
 	- Recompute GMM for new label assignment
+ - Note: If we increase $\gamma$, we will get a smoother boundaries result but with pixels to be less likely to belong together being clustered. Decrease $\gamma$ and we get rougher boundaries but with pixels more likely to belong to the right cluster
 
 ## GraphCut Example
 
