@@ -210,7 +210,7 @@
 - We can think of the KL loss as we are checking how far off the encoder's estimate of the **posterior** is from the **prior** (as shown below)
 	- Take note of the Baye's Rule!
 
-![[loss_function.png]]
+![[Computer Vision/Images/loss_function.png]]
 
 - Loss consists of two terms: reconstruction loss and regularisation loss
 - **Reconstruction loss**: encourages network to create output images as similar as possible to input image

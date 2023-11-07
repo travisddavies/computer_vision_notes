@@ -219,3 +219,7 @@ $$
 ## GraphCut Example
 
 ![[graphcut_example.png]]
+
+## How to Get Labels?
+- Unlabelled regions can be inputs to an object classification method
+- Or, segmentation and classification can be done simulateneously
