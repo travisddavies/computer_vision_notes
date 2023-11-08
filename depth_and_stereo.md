@@ -2,7 +2,6 @@
 ## Learning Outcomes
 - Explain the cues available for depth perception in single-view and multi-view images
 - Compute depth from disparity
-- Compute depth from disparity
 - Explain how a standard stereo depth algorithm works
 - Explain machine-learning approaches to single-view depth
 
@@ -96,7 +95,7 @@ $$
 	- Compute disparity $x-x'$ and compute $depth = \frac{fB}{x-x'}$ 
 
 ## Basic Stereo Matching
-- What we will do to find $x'$ in the second image is to scan along the pixels along the same $y$ coordinate with a window to find the the pixels where the sum of squared errors for the pixel intensity is the minimum value
+- What we will do to find $x'$ in the second image is to scan along the pixels at the same $y$ coordinate with a window to find the the pixels where the sum of squared errors for the pixel intensity is the minimum value
 - The point with the lowest sum of squared error will be considered $x'$ 
 - Sum of squared errors for this task can often be unreliable, because changes in intensity from changes in light in the second image or different camera used can greatly influence the performance for finding $x'$
 
@@ -109,7 +108,7 @@ $$
 ## Effect of Window Size
 - As shown in the images below, the size of the window can greatly influence the performance of the depth maps calculated.
 - Window too small will add lots of noise into the depth map
-- Window too large will make the image too blocky, because it's covering too much of the image and missing lots of important information.
+- Window too large will make the image too blobby, because it's covering too much of the image and missing lots of important information.
 
 ![[effect_window_size.png]]
 
