@@ -3,6 +3,11 @@
 
 ![[Computer Vision/Images/shape_and_texture.png]]
 
+## Learning Outcomes
+- Explain parametric and non-parametric methods for representing and synthesising texture
+- Explain common applications of texture synthesis
+- Explain an algorithm for texture transfer (Neural Style Transfer)
+
 # What is a Texture?
 - A definition from image processing:
 	Texture is a region with **spatial stationary** (same statistical properties everywhere in the region)
