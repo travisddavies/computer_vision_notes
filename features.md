@@ -259,3 +259,61 @@ As we can see in the change of window below, the intensity of the colours for ea
 	- Choice of approach depends on task
 		- Spatial information is probably not needed for category-level recognition
 		- Spatial information is useful for tasks that require matching structure across images
+
+# Exercises
+## Question 1 - Harris Corner Detection
+![[Computer Vision/Images/harris_corner_exercise1.png]]
+
+First let's calculate the $d/dx$:
+We perform a convolutional operation with the $d/dx$ kernel over the matrix, and these are the results we get:
+$a_{1,1} = -1 \times 1 + 0 \times 0 + 1 \times 5 = 4$
+$a_{1,2} = -1 \times 0 + 0 \times 5 + 1 \times 7 = 7$
+$a_{1,3} = -1 \times 5 + 0 \times 7 + 1 \times 11 = 6$
+$a_{2,1}= -1 \times 1 + 0 \times 4 + 1 \times 9 = 8$
+
+... you get the idea of how to do this by now, so we won't do the rest
+
+$a_{2,2} = 8$
+$a_{2,3} = 7$
+$a_{3,1} = 8$
+$a_{3,2} = 6$
+$a_{3,3} = 5$
+
+Now we do the same for the $d/dy$ kernel:
+$a_{1,1} = -1 \times 0 + 0 \times 0 + 1 \times 4 = 4$
+$a_{1,2} = -1 \times 1 + 0 \times 5 + 1 \times 9 = 8$
+$a_{1,3} = -1 \times 4 + 0 \times 7 + 1 \times 12 = 8$
+
+... you should get the idea by now of how we do this
+
+$a_{2,1}= 8$
+$a_{2,2} = 6$
+$a_{2,3} = 7$
+$a_{3,1} = 6$
+$a_{3,2} = 6$
+$a_{3,3} = 4$
+
+This is the final result:
+
+![[harris_corner_exercise1_ans.png]]
+
+![[harris_corner_exercise2.png]]
+
+$\underset{(x,y) \in W}{\sum} I_x(x,y)^2 = 4^2 + 7^2 + 6^2 + 8^2 + 8^2 + 7^2 + 8^2 + 6^2 + 5^2 = 403$
+$\underset{(x,y) \in W}{\sum}I_y(x,y)^2 = 4^2 + 8^2 + 8^2 + 8^2 + 6^2 + 7^2 + 6^2 + 6^2 + 4^2 = 381$
+$\underset{(x,y) \in W}{\sum}I_x(x,y)I_y(x,y) = 4 \times 4 + 7 \times 8 + 6 \times 8 + 8 \times 8 + 8 \times 6 + 7 \times 7 + 8 \times 6 + 6 \times 6 + 5 \times 4 = 385$ 
+Therefore, when we plug these back into our matrix, we get:
+
+$$
+H = \begin{bmatrix}
+   403 & 385 \\
+   385 & 381
+\end{bmatrix}
+$$
+![[harris_corner_exercise3.png]]
+
+$det(H) = 403 \times 381 - 385 \times 385 = 5318$
+$tr(H) = \text{sum of diagonals} = 403 + 381 = 784$
+$R = det(H) - K(tr(H))^2 = 5318 - 0.04 \times 784^2 = -19,268.24$
+
+Given that we got a negative value, $\lambda_1 + \lambda_2$ is obviously large compared to $\lambda_1 \lambda_2$. Therefore we can say that this is an edge
