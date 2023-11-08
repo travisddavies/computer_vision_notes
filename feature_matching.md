@@ -28,7 +28,7 @@
 	- Noise in data that is explained by model
 
 ## Hough Transform
-- For something such as edge detection, we often can't simply extract the lines from the edge detection results, as we will have broken lines and various textures that make the process very complicated to extract the naive means.
+- For something such as edge detection, we often can't simply extract the lines from the edge detection results, as we will have broken lines and various textures that make the process very complicated to extract by naive means.
 - Therefore, we need a new approach to extracting the edges, such as the Hough Transform
 
 ![[gray_room.png]]
@@ -38,7 +38,11 @@
 ## Hough Transform
 - Each edge point "votes" for the lines that pass through that point
 - Identify lines with the most "votes"
-- We can think of this as we will take random lines in the parameter space that intersect with the dots on the left graph, and eventually we will find a point in the parameter space that intersects with all the points on the left graph
+- We can think of it like this: 
+	- In the image space we may have a jagged line (like in canny edge image above)
+	- In Hough Space, a line is represented as a single point (as shown later)
+	- In Hough Space, an intersection where many lines are intersecting represents a continuous line in image space
+	- Therefore, finding a point in Hough space that intersects with many lines will represent the same line in image space, albeit if it is not fully connected in the canny edge output
 
 ![[hough_transform.png]]
 
@@ -49,11 +53,13 @@
 
 - Solution to noise: bin parameters
 - Points vote for bins
+- These bins represent the polar coordinates in Hough space. These can be converted back into image space
 
 ![[bin_hough_transform.png]]
 
 - Another problem: slope and intercept ($m,b$) are unbounded
 - Solution: use a polar representation of ($m,b$)
+	- This is as explained above, the length of the hypotenuse from the line at (0, 0) and connects perpendicular with the line in image space forms $\rho$. The angle of that line from the $x$-axis is the parameter $\theta$. As shown below
 
 ![[hough_transform_sin.png]]
 
