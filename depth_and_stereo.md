@@ -223,3 +223,11 @@ Minimise $E(D)$ using an optimisation such as graph cuts
 - Disadvantages:
 	- "Blurry" depth at object edges (but can be combined with edge maps for better results)
 	- Models may not generalise well to new contexts
+
+# Exercises
+
+![[depth_and_stereo_exercise1.png]]
+
+- Computed depth is $z = \frac{fb}{\alpha + \beta}$
+- Camera calibration is important for stereo vision because all inferences depend directly on the geometric parameters of the system. For example, the focal length must be the same value for both cameras for us to calculate the depth of the object
+- Baseline, the $x$ and $y$ coordinate of each camera, the focal length, the rotaion around each camera's optical axis
