@@ -1,4 +1,10 @@
 # Local Features
+
+## Learning Outcomes
+- Explain the difference between bag-of-features and feature-detection-based approaches and their applications
+- Implement an algorithm for feature detection (Harris corners)
+- Explain the desirable properties of feature descriptors
+
 ## Approaches to Recognition
 ### How CNNs Learn from Local Features
 - CNNs learn from local features such as:
@@ -6,11 +12,13 @@
 	- Edges
 	- Local shapes
 	- Changes in colour 
-- This is exhibited with the below images being warped but still maintaining local features, although it's difficult for us to recognise, a CNN can still recognise
+- This is exhibited with the below images being warped/texturised but still maintaining local features, although it's difficult for us to recognise, a CNN can still recognise
 
 ![[local_features_drop.png]]
 
 - An example can be shown below, these features are very important to a CNN
+- Although to use they seem insignificant, these are key features that a CNN will look for as they are quite unique for describing the image
+- Take note of things like shape, texture, patterns, colours, etc
 
 ![[patches.png]]
 
@@ -56,6 +64,7 @@
 
 -  However, these patches are scale variant, and for varying scales for different images, the performance will drop.
 	- Therefore we look at other better solutions
+ 
 ## Spatial Pyramids
 - Main idea: run bag of features at multiple scales
 - Note that there's a difference between:

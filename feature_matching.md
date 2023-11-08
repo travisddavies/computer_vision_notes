@@ -1,4 +1,10 @@
 # Feature Matching
+
+## Learning Outcomes
+- Explain two methods for detecting structure in images (Hough transform, RANSAC) and how they are commonly applied in images
+- Implement an instance-recognition model using feature detection, feature matching, and RANSAC
+
+# Feature Matching
 - Feature matching is basically the process of finding features of something in an image to be able to match with the same thing in another image at any angle in 3D pose
 - Example shown below
 
