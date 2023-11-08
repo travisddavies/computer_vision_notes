@@ -115,7 +115,7 @@ And with a little bit of tinkering, we can get out the edges image with the Houg
 - Basically grid search over all possible values of each parameter, so limited to just a few parameters
 
 # RANSAC
-- RANSAC = RANdom Sample Consensus
+- RANSAC = RANdom SAmple Consensus
 - Like Hough transform, points "vote" for the model that explains those points
 - Iteratively:
 	- Sample $N$ points at random (when $N$ is the number of points needed to fit the model)
@@ -141,7 +141,7 @@ And with a little bit of tinkering, we can get out the edges image with the Houg
 	- Example: Half of your data is outliers, and you want to fit a line. How many samples?
 		- Probability of getting a good point for line fitting is 0.5. Taking two good points is therefore $0.5 \times 0.5 = 0.25$  
 		- Using Bernoulli trials of 16 and a probability of having two good points of 0.25, we can see that there is 0.99 chance that we will get at least one good point in our line since it is 0.01 chance we get no good points.
- 
+  
 		![[odf.png]]
 - Threshold for inliers
 	- Choose $\delta$ so that a good point with noise is likely (e.g., prob=0.95) within threshold
@@ -183,7 +183,7 @@ Problems:
 Step 3. Use RANSAC to find subset of matches that can be explained by a transformation model
 
 ## What Model?
-- What we see in the below pictures is that the actual building inside the image is the same, but the actual angle of the building to the camera is different.
+- What we see in the below pictures is that the actual building inside the image is the same, but the actual perspective of the building to the camera is different.
 - We can think of this as a transformation
 
 ![[what_model.png]]
@@ -264,3 +264,18 @@ Repeat until max iterations, take model with most inliers
 	- Panorama stabilisation
 	- Finding planes, vanishing points, etc. in images
 	- 3D reconstruction
+
+# Exercises
+![[feature_matching_exercises1.png]]
+
+To accommodate for projection transforms, we will take $s$ as 4
+Therefore:
+$s=4$
+$N=100$
+$e = 0.4$
+
+$(1-p) = (1-(1-e)^s)^N$
+$(1-p) = (1 - (1 - 0.4)^4)^{100}$
+$(1-p) = (1 - 0.6^4)^{100}$
+$p = 1 - (1 - 0.1296)^{100}$
+$p = 0.9999$
