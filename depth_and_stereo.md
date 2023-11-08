@@ -1,3 +1,11 @@
+# Depth and Stereo
+## Learning Outcomes
+- Explain the cues available for depth perception in single-view and multi-view images
+- Compute depth from disparity
+- Compute depth from disparity
+- Explain how a standard stereo depth algorithm works
+- Explain machine-learning approaches to single-view depth
+
 # Cues for Depth
 ## 1. Perspective
 - We can see that the smaller rectangle in the centre has connecting diagonal shapes on the sides coming towards us.
