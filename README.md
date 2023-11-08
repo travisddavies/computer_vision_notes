@@ -4,6 +4,9 @@ These are my notes for Computer Vision, COMP90086 at the University of Melbourne
 ### Note
 These notes should be read via [Obsidian](https://obsidian.md/). The latex and embedded media does not render very well via GitHub. 
 
+### In the Works
+- Additional exercises off the internet (since hardly any are provided in class)
+
 To get the notes, simply use the following:
 
 ```
