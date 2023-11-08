@@ -1,4 +1,10 @@
 # Multi-View Problem
+
+## Learning Outcomes
+- Explain the unknowns that must be solved in a multi-view depth problem
+- Explain two-view (epipolar geometry) and how it constrains the solution to this problem
+- Define a "calibrated" camera and explain what is represented in a camera matrix
+
 ## Standard Stereo Set-Up
 - Assume:
 	- Image planes of cameras are parallel to each other and to the baseline $B$
