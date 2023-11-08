@@ -198,6 +198,7 @@ As we can see in the change of window below, the intensity of the colours for ea
 ## Invariance / Tolerance
 - Corner detection is based on the image gradient (edges), so it's 
 	- Invariant to translation
+	- Invariant to rotation
 	- Tolerant to changes in lighting
 - Because the corner response is based on eigenvalues, it is invariant to image-plane rotation
 - Not invariant to scale!
