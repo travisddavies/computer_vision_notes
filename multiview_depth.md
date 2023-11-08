@@ -74,7 +74,7 @@ $$
 $$
 - Coordinates in the image will vary for each keypoint in an image
 - Camera matrix will remain the same for each scene/camera
-- Rotation + rotation matrix will vary for each image taken
+- Rotation + translation matrix will vary for each image taken
 	- This will be a 4x4 matrix to apply against the camera matrix
 - Real world coordinates vector varies for various objects in the world
 
@@ -119,7 +119,7 @@ $$
 # Epipolar Geometry - Basics
 ## Two-View Problem
 - What is the camera transform (translation + rotation) that relates these two views?
-- As the dots show, we can map matching features together from two different perspectives. We can then ask what are the governing rules that govern how these features map between scenes.
+- As the dots show, we can map matching features together from two different perspectives. We can then ask what are the rules that govern how these features map between scenes.
 
 ![[Computer Vision/Images/two_view_problem.png]]
 
@@ -176,7 +176,7 @@ Potential matches for $x'$ must lie on the line $l$
 - Epipolar lines in an image meet at a point called the **epipole**
 - The epipole is the projection of one camera in the other image
 
-# Epipolar Geometry - Math
+# Epipolar Geometry - Maths
 ## Two-View Problem
 
 ![[estimating_camera_transform.png]]
@@ -187,7 +187,7 @@ Potential matches for $x'$ must lie on the line $l$
 
 - If the camera matrix ($K$) is known, use it to convert image points $x$ and $x'$ to homogeneous coordinates
 - This formula is how we convert real world coordinates to image coordinates, where $X$ is the point in the real world, and matrix $K$ is the camera matrix
-- $\hat{x}$ in this case is the $x$ in the above diagram
+- $\hat{x}$ in this case is $x$ in the above diagram
 $$
 \hat{x} = \underset{K} { 
 \begin{bmatrix} 
@@ -200,7 +200,9 @@ $$
 
 ![[epipolar_constraint2.png]]
 
+- The above $\hat{x}$ means the homogeneous coordinate frame expressed for camera $C$ 
 - To get the point as seen from either view, we simply apply the below formula.
+- This means that we can get $P'$ by applying $P' = RP+T$, which is the same point, but from the other camera's perspective
 - What we should remember is also the key constraint below.
 
 ![[epipolar_constraint3.png]]
@@ -267,7 +269,7 @@ $$
 - The vector of $F$ values that we want is the null space of this matrix
 
 ## Limitations
-- System is only solved up to a scaling factor, need to least one known distance to solve for real-world positions
+- System is only solved up to a scaling factor, need at least one known distance to solve for real-world positions
 - Degenerate cases: can't solve if the system has too few degrees of freedom
 	- Points in the world are all coplanar
 	- Camera translation = 0 (just rotation)
