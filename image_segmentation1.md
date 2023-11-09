@@ -26,14 +26,17 @@
 ![[colour_clustering.png]]
 
 ## K-means ($k = 6$)
+- K-means clustering works by setting $k$ number of clusters and then iteratively finding the centroid in their given regions. This is an algorithm that is efficient, but often can lead to inaccuracies when the number of clusters chosen is too high or too low. Furthermore, the initial locations of the cluster centres greatly impacts the effectiveness of the algorithm to find the right cluster centroids
 
 ![[k-means_6.png]]
 
 ## Gaussian Mixture Model ($k=6$)
+- Gaussian mixture model follows a Bayesian approach to clustering, where it also accommodates the uncertainty of a pixel belonging to a particular pixel. This can be useful for much more complex situations where the probabilities of each pixel belonging to a cluster need to also be considered
 
 ![[gaussian_mixture_model_k6.png]]
 
 ## Mean Shift (bandwidth = 7)
+- Mean shift works by finding the _mode_ of a density, and iteratively shifts points in the plot towards the closest mode. This results in a number of clusters and the ability to assign a sample to a cluster after fitting is complete. This also means that $k$ number of clusters do not need to be assigned to perform the algorithm
 
 ![[mean_shift_bandwidth7.png]]
 
