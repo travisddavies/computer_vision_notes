@@ -51,7 +51,7 @@
 ![[mean_shift_clustering1.png]]
 
 ## Mean Shift
-- How it works is, is we take a region of our data points and calculate the center of mass.
+- How it works is, is we take a region of our data points and calculate the centre of mass.
 - We then shift the centre of our region to this centre of mass and calculate the next centre of mass
 - We repeat this process until it converges with the peak of the PDF.
 
