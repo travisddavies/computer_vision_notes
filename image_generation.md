@@ -126,7 +126,7 @@
 
 ## Deeper Autoencoder Architecture
 - The middle part is what we're interested in, this will give us the lower dimensional representation!
-- Take not of the left and right side of the model. We say that the left hand side is the encoder, and the right hand side is the decoder
+- Take note of the left and right side of the model. We say that the left hand side is the encoder, and the right hand side is the decoder
 
 ![[deeper_autoencoder_architecture.png]]
 
@@ -183,7 +183,7 @@
 ## Probabilistic Decoder
 - Input: latent variables $z$
 - Output: mean $\mu_{x|z}$ and diagonal covariance $\Sigma_{x|z}$, parameters of a Gaussian distribution that generates $x$ conditional on $z$
-	- This can be imagined as the decoder now outputting two images, one for the mean values for the pixels of the image, and another for the covariance of each image
+	- This can be imagined as the decoder now outputting two images, one for the mean values for the pixels of the image, and another for the covariance of the image
 
 ![[probabilistic_decoder.png]]
 
@@ -233,7 +233,7 @@
 
 ## Latent Space Visualisation
 - This is a representation of the **continuous** behaviour that we would like our encoder to have
-- We can basically in add a bit more smiling to the encoder and the decoder will produce a more smiley face, or adding more 0 features to the encoder to make the decoder create a 6 six that looks more like a 0
+- We can basically add in a bit more smiling to the encoder and the decoder will produce a more smiley face, or adding more 0 features to the encoder to make the decoder create a 6 six that looks more like a 0
 
 ![[latent_space_visualisation.png]]
 
