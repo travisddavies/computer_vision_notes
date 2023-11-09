@@ -72,7 +72,7 @@ Select probable value for the missing pixel, based on similar patches:
 
 ## Neighbourhood Size
 - As we can see with the performance of different neighbourhood sizes below, the performance really depends on the actual texture and the size of the neighbourhood for that texture
-- As shown below, too small a neighbourhood and the texture is completely different, bigger neighbourhoods in this case give a better result.
+- As shown below, too small a neighbourhood and the texture is completely different, bigger neighbourhoods in this case give a better result. However, this would need to be adjusted depending on the texture in question.
 
 ![[neighbourhood_size.png]]
 
@@ -143,7 +143,7 @@ Select probable value for the missing pixel, based on similar patches:
 ### Fourier Magnitude?
 - We can use the Fourier transform to get parameters for texture
 - Below shows that by keeping the phase and randomising the magnitude, we actually can still keep the structure of the texture for the image. However, we it doesn't really keep the actual appearance of the image. 
-- While when we keep the magnitude and randomise the the phase, it doesn't really seem to keep the texture as well.
+- While when we keep the magnitude and randomise the phase, it doesn't really seem to keep the texture as well.
 
 ![[fourier_magnitude_parametric.png]]
 
@@ -154,7 +154,7 @@ Select probable value for the missing pixel, based on similar patches:
 ![[fourier_texture_synthesis.png]]
 
 ## Colours and Edges?
-- Textures could be defines as a distribution over simple features, like colour and edge orientation at various scales
+- Textures could be defined as a distribution over simple features, like colour and edge orientation at various scales
 - Synthesise texture by matching the distribution
 
 ![[colours_and_edges.png]]
