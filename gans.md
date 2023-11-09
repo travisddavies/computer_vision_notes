@@ -70,7 +70,7 @@
 ![[training.png]]
 
 - If the discriminator is too good:
-	- Easily all fake inputs
+	- Easily spot all fake inputs
 	- Not much information to train the generator
 - If the discriminator is too bad:
 	- Easily confused by fake inputs that don't look real
