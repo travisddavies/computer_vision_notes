@@ -1,3 +1,10 @@
+# Shape
+
+## Learning Outcomes
+- Explain what a topological skeleton is and how it is computed
+- Explain a method for detecting shape contour (active contours/snakes)
+- Explain methods for modelling face shape and their applications
+
 ## Shape 
 
 ![[shapes.png]]
