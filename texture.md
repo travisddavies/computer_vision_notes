@@ -142,8 +142,8 @@ Select probable value for the missing pixel, based on similar patches:
 
 ### Fourier Magnitude?
 - We can use the Fourier transform to get parameters for texture
-- Below shows that by keeping the phase and randomising the magnitude, we actually can still keep the structure of the texture for the image. However, we it doesn't really keep the actual appearance of the image. 
-- While when we keep the magnitude and randomise the phase, it doesn't really seem to keep the texture as well.
+- Below shows that by keeping the phase and randomising the magnitude, we actually can still keep the structure the image. However, we it doesn't really keep the actual appearance of the image. 
+- The texture of the image is maintained when we keep the magnitude and randomise the phase
 
 ![[fourier_magnitude_parametric.png]]
 
@@ -222,7 +222,7 @@ Select probable value for the missing pixel, based on similar patches:
 - We feed the images into a neural net as shown below, and we pull out the feature maps at each highlighted red point and reconstruct the images with separate neural networks. 
 - We first feed in the image that holds the structure. As can be seen with the quality of the house as we progress deeper into the network, the quality of the image degrades. This is because of the max pooling layers reducing the spatial precision of the images.
 - We then feed in the style image through the network and find the correlations between the feature maps as we did for feature correlations technique previously and then feeding these into neural nets for reconstruction. As can be seen with the starry night image, the image focuses mainly on local features at the beginning and then focuses on more global features deeper into the network.
-- You then pick a reconstructed image of each and then feed in some white noise to basically make the neural network form a blend of the two images, thus creating our neural style transfer image!
+- You then pick a reconstructed image of each and then feed in some white noise to basically make the neural network from a blend of the two images, thus creating our neural style transfer image!
 
 ![[neural_style_transfer.png]]
 
