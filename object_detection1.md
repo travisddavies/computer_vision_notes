@@ -256,7 +256,7 @@ $$
 
 ## Faster R-CNN
 - Major change: network learns region proposals, instead of Selective Search 
-- The left-hand side are the new parts for faster CNN - a region proposal network
+- The left-hand side are the new parts for faster R-CNN - a region proposal network
 
 ![[faster-rcnn.png]]
 
