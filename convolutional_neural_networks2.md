@@ -16,7 +16,7 @@
 - Can also improve tolerance to translation - small changes in input won't change downsampled output
 
 ## Strided Convolution
-- Convolutional strid = distance between successive convolution windows
+- Convolutional stride = distance between successive convolution windows
 - In CNN's, stride can be > 1
 - Assuming no padding:
 	- output_size = ceil((input_size - kernel_size + 1)/stride)
@@ -192,7 +192,7 @@ $$
 ## Batch Size
 - Batch size (or mini-batch size) = portion of the training data used to compute gradient for parameter update
 - It's not computationally feasible to use the whole dataset to compute each update
-- Dataset is randomly split into $N$ batches of size $b4
+- Dataset is randomly split into $N$ batches of size $b$
 - $N$ updates = 1 epoch (every image has been seen once)
 
 - Smaller batch size

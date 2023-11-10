@@ -136,6 +136,9 @@ $$
 - Regular neural networks can be used for image recognition
 - But **convolutional** neural networks are more common for large images
 - Why?
+	- More efficient learning of local, repeated patterns
+	- However, limits what the network can learn
+
 
 ![[why_convolution.png]]
 
