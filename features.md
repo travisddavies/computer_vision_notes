@@ -126,6 +126,7 @@
 ![[sliding_window_descriptor.png]]
 
 ## Corner Detection
+<iframe width="560" height="315" src="https://www.youtube.com/embed/Z_HwkG90Yvw?si=7q92i5qkpjKoG7Lp" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 - Change in appearance of window $w(x,y)$ for the shift $[u,v]$:
 
 ![[corner_detection_error.png]]
