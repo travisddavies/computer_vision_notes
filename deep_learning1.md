@@ -65,7 +65,7 @@ Other VGG variations with more/fewer layers (e.g., VGG-19)
 
 ## ResNet: Background
 - No, performance saturates and then decreases
-- Not due to overditting - performance is worse on the training set
+- Not due to overfitting - performance is worse on the training set
 
 ![[resnet_background.png]]
 
