@@ -17,7 +17,7 @@
 ![[perspective2.png]]
 
 ## 2. Texture
-- The floor in the left image is actually flat, however the _texture_ makes us believe that the floor is actually deeper on the middle part of the floor.
+- The floor in the left image is actually flat, however the _texture_ makes us believe that the floor is actually deeper on the middle part of the floor. (Looking at the floor, we expected all the patterns to be the same but it is not and gives us an alternative perception)
 - Texture plays an important role on our perceptions for how deep something is.
 
 ![[texture.png]]
@@ -32,12 +32,12 @@
 ## 4. Object Knowledge
 - With objects that we know about, we can interpret the depth of the image.
 - We know how big the Leaning Tower of Pisa is, so we know that the building is actually far away from the man pretending to hold it
-- Much the same for the other image, we know it's not possible to have this size difference by looking at the bodies of the two women, so we can tell that the smaller women is further away from the camera
+- Much the same for the other image, we know it's not possible to have this size difference by looking at the bodies of the two women, so we can tell that the smaller women is further away from the camera (This technique was used in LOTR for the Hobbits in Shire)
 
 ![[object_knowledge.png]]
 
 ## Binocular Stereo
-- This is done by separating an object at different distances and colours so that when you wear 3D glasses, different colours for the separated objects are filtered for one eye and not for the other to trick your brain into thinking that there is some distance with the object.
+- This is done by separating an object at different distances and colours so that when you wear 3D glasses, different colours for the separated objects are filtered for one eye and not for the other(one glass allows red and the other blue) to trick your brain into thinking that there is some distance with the object.
 
 ![[binocular_stereo.png]]
 
@@ -49,7 +49,7 @@
 ## Cues for Depth
 - 2D images contain a variety of information for depth perception
 - Cues available in a single view include perspective, texture, and object cues
-- More accurate depth information can be obtained by combining multiple views (stereo, motion)
+- More accurate depth information can be obtained by **combining multiple views** (**stereo**, **motion**)
 
 # Stereo
 ## Depth from Stereo
@@ -66,7 +66,7 @@
 	- Focal lengths $f$ are the same
 	 - $x$ and $x'$ are distances of the camera's focal point on the plane below to the axis towards the point of interest. 
 		 - $x$ is positive, $x'$ is negative.
-- Goal: find $z$ (the distance on the right part of the image)
+- Goal: find $z$ (the distance on the right part of the image which could give us a perception of **depth**)
 
 ![[depth_from_stereo 1.png]]
 
@@ -78,7 +78,7 @@ $$
 $$
 z = \frac{fB}{x-x'}
 $$
-- Distance $z$ is inversely proportional to disparity $x-x'$ 
+- Distance $z$ is inversely proportional to disparity $x-x'$ (For larger $z$, the error rate increases in terms of pixels)
 - If you think about what this means it makes perfect sense 
 	- If the angle of the camera's view to the axis intercept to the point of interest is large it means that the point is closer to the camera. 
 	- If the angle is very small, then it means that the point is very far from the camera, much like when you see an object far in the distance.
@@ -101,7 +101,7 @@ $$
 
 ![[basic_stereo_matching.png]]
 
-- What we can do instead is take the normal correlation of the two patches of pixels, the pixel with the highest value will be considered $x'$
+- What we can do instead is take the normalised correlation of the two patches of pixels, the pixel with the highest value for the normalised cross correlation will be considered to be the chosen $x'$
 
 ![[basic_stereo_matching2.png]]
 
@@ -114,7 +114,6 @@ $$
 
 - Smaller window = finer detail, but more noise
 - Larger window = smoother depth, but lacking detail
-
 ## Match Failures
 - There are lots of ways that this approach can fail, however. 
 - Take for example the gate in the below image, there's lots of repeated patterns, so it the algorithm will struggle to find the true $x'$ in the image.
@@ -126,7 +125,7 @@ $$
 ![[reflective_objects.png]]
 
 ## Window Matching Results
-- As we can see in the below images, our final estimated depth can be messy based on various factors.
+- As we can see in the below images, our final estimated depth can be messy(noisy) based on various factors.
 
 ![[window_matching_resuls.png]]
 
@@ -139,7 +138,7 @@ $$
 	- **Smoothness**: disparity values should change smoothly (for the most part)
 
 ## Ordering Constraint
-- The above-mentioned ordering constraint can sometimes not hold.
+- The above-mentioned ordering constraint can sometimes not hold. ($d,b,a$  vs $c', b', d'$ which is the opposite order)
 - As can be seen in the second image, objects can interfere with the two cameras and affect our calculations of depth. Therefore ordering will not always guarantee accurate results.
 
 ![[ordering_constraint.png]]
@@ -178,7 +177,7 @@ Minimise $E(D)$ using an optimisation such as graph cuts
 
 ## Supervised Depth Classification
 - Treat depth estimation as a classification task: For each pixel in image, predict distance from camera
-- Train on images with annotated depth maps
+- Train on images with annotated depth maps (blue is closer, red is further)
 
 ![[supervised_depth_classification.png]]
 
@@ -187,7 +186,7 @@ Minimise $E(D)$ using an optimisation such as graph cuts
 ![[supervised_depth_classification_cnn.png]]
 
 ## Loss Function?
-- Images may have a very large range of depths - a loss based on log(depth) may work better than absolute depth
+- Images may have a very large range of depths - a loss based on **log(depth)** may work better than absolute depth
 - Mean depth of scenes can vary widely (e.g., closet vs. stadium). To discourage models from simply learning mean depth, consider scaling the loss function so that it is similar for different scenes
 
 ## Supervised Classification Results
@@ -195,6 +194,9 @@ Minimise $E(D)$ using an optimisation such as graph cuts
 ![[supervised_classification_results.png]]
 
 ## Depth from Disparity
+- **Instead** of training on annotated depth maps, train on **stereo image pairs**
+- Advantage: stereo image pairs can be produced with standard cameras, while depth maps require special equipment (e.g., LiDAR)
+
 - Input: one image from a stereo pair (e.g., left)
 - Learn to predict the disparity map that will produce the other image (e.g., right)
 - Distance from camera to surfaces can be computed from the disparity map
@@ -212,7 +214,7 @@ Minimise $E(D)$ using an optimisation such as graph cuts
 
 ![[depth_from_disparity_cnn.png]]
 
-## Depth from Disparity Results
+## Depth from Disparity Results (yellow is closer, purple is further)
 
 ![[disparity_results.png]]
 
@@ -224,10 +226,13 @@ Minimise $E(D)$ using an optimisation such as graph cuts
 	- "Blurry" depth at object edges (but can be combined with edge maps for better results)
 	- Models may not generalise well to new contexts
 
+- 2D images provide multiple cues for 3D depth (single-image and multi-image cues)
+- It is possible to compute depth from single images, but **more accurate depth measurements** can be obtained from **multiple views (e.g., stereo)**
+
 # Exercises
 
 ![[depth_and_stereo_exercise1.png]]
 
 - Computed depth is $z = \frac{fb}{\alpha + \beta}$
 - Camera calibration is important for stereo vision because all inferences depend directly on the geometric parameters of the system. For example, the focal length must be the same value for both cameras for us to calculate the depth of the object
-- Baseline, the $x$ and $y$ coordinate of each camera, the focal length, the rotaion around each camera's optical axis
+- Baseline, the $x$ and $y$ coordinate of each camera, the focal length, the rotation around each camera's optical axis
