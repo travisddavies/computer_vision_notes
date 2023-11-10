@@ -45,7 +45,7 @@ Some examples may include the following for the below image:
 	- $j$ = unit vector in the $y$ direction
 - Gradient at a single point ($x$, $y$) is a vector:
 	- Direction is the direction of maximum slope:
-	- $\theta = \tan^{-1}(\frac{df}{dx}/\frac{df}{dx})$ 
+	- $\theta = \tan^{-1}(\frac{df}{dy}/\frac{df}{dx})$ 
 	- Length is the magnitude (steepness) of the slope
 	- $\lVert \nabla f \rVert = \sqrt{(\frac{df}{dx})^2+(\frac{df}{dy})^2}$
 
@@ -159,6 +159,7 @@ $$
 1. Denoise the image with Gaussian filter
 2. Calculate the gradients of the image
 3. Apply non-max suppression on the edges of the image
+4. Perform hysteresis thresholding to remove any false positive edges
 
 # Edges for Image Recognition
 
