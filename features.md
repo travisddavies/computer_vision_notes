@@ -225,6 +225,7 @@ As we can see in the change of window below, the intensity of the colours for ea
 ![[feature_descriptors_cockatoo.png]]
 
 ## Scale-Invariant Feature Transform (SIFT)
+<iframe width="560" height="315" src="https://www.youtube.com/embed/ram-jbLJjFg?si=C8MfwMxri5pweH-L" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 - Compute gradient, take histograms in a grid of pixels around interest point
 - Weight gradient magnitudes based on distance from centre of patch
 - Normalise histograms to sum to 1
