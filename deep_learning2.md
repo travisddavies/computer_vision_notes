@@ -39,7 +39,7 @@
 	- Show the dimensions with the most variance
 	- Simple but often hard to interpret since only a few dimensions can be visualised simultaneously
 - t-SNE (t-distributed stochastic neighbour embedding)
-	- Flatten high-dimensional data into 2D or 3D so that near neighbours stay nearby
+	- Flatten high-dimensional data into 2D or 3D so that near neighbours stay nearby (If the embeddings from the 4096 dimension space are close, their representation in 2D and 3D should also be close)
 
 ![[cnnembed.png]]
 

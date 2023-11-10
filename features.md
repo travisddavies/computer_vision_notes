@@ -317,4 +317,4 @@ $det(H) = 403 \times 381 - 385 \times 385 = 5318$
 $tr(H) = \text{sum of diagonals} = 403 + 381 = 784$
 $R = det(H) - K(tr(H))^2 = 5318 - 0.04 \times 784^2 = -19,268.24$
 
-Given that we got a negative value, $\lambda_1 + \lambda_2$ is obviously large compared to $\lambda_1 \lambda_2$. Therefore we can say that this is an edge
+Given that we got a negative value, $\lambda_1 + \lambda_2$ is obviously large compared to $\lambda_1 \lambda_2$ which indicates that either $\lambda_1 \ or\ \lambda_2$ is much greater than the other. Therefore we can say that this is an edge.
