@@ -54,8 +54,8 @@
 - This technique is to mitigate the issue that we explained above about the blur caused from a large aperture in the pinhole camera. This is done by:
 	- Creating a lens that focuses a ray of light in the world to a certain point in the camera, the **focal point** $F$. This allows us to focus on objects far away without blur
 	- Also note the focal length $f$, as with digital cameras, we can adjust our focus of objects in the real world by adjusting how much our lens protrudes out of the camera, which is basically just adjusting $f$!
-		- The **larger** the focal length $f$, the **more focus** we have on closer objects. 
-		- The **smaller** the focal length $f$, the **more focus** we have on farther objects.
+		- The **larger** the focal length $f$, the the narrower angle of view. This means narrower view of the world and more focus on further objects. 
+		- The **smaller** the focal length $f$, the wider the angle of view. This means they capture a wider view of the world.
 
 ![[lense.png]]
 
@@ -68,7 +68,7 @@
 ![[depth_of_field2.png]]
 
 - The same for an object that is further away, it will also cause a spread on the image plane.
-- The **depth of field** in this case, we say is the distance of these two out-of-focus points
+- The **depth of field** in this case, we say is the distance of these two out-of-focus points, the two objects closest and furthest that can be in focus with the given focal length
 
 ![[depth_of_field3.png]]
 
