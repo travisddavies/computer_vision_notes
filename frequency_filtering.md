@@ -108,8 +108,6 @@
 - All Fourier transforms in these images are reflected, so the left hand side will always look like the right hand side
 - Everywhere that is black represents zero values, except for the 3 peaks in the middle of the plots
 - If you compare the first image to the second, we can see that the 3 dots are further apart for the second one. This means that it has a higher frequency.
-- Also note that the third image's Fourier transform is rotated, just like the image itself
-- If you compare the first image to the second, we can see that the 3 dots are further apart for the second one. This means that it has a higher frequency..
 - Also note that the third image's Fourier transform is rotated, just like the image itself. This means that the Fourier transform goes along the sinusoidal wave
 
 ![[Computer Vision/Images/fourier_transform_of_images.png]]
@@ -173,7 +171,7 @@ $$
 - Inverse:
 
 $$
-FT^{-1}[hf] = FT^{-1}[h] * FT^{-1} * FT^{-1}[f]
+FT^{-1}[hf] = FT^{-1}[h] * FT^{-1}[f]
 $$
 
 ## Bandpass Filter
