@@ -233,6 +233,6 @@ Minimise $E(D)$ using an optimisation such as graph cuts
 
 ![[depth_and_stereo_exercise1.png]]
 
-- Computed depth is $z = \frac{fb}{\alpha + \beta}$
+- Computed depth is $z = \frac{fb}{\alpha - \beta}$
 - Camera calibration is important for stereo vision because all inferences depend directly on the geometric parameters of the system. For example, the focal length must be the same value for both cameras for us to calculate the depth of the object
 - Baseline, the $x$ and $y$ coordinate of each camera, the focal length, the rotation around each camera's optical axis
