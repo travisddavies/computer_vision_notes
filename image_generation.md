@@ -252,6 +252,7 @@
 - Disadvantages
 	- Outputs often blurry (why?)
 		 - Because our output is essentially finding the mean of a normal distribution of our trained dataset. This will obviously create more of a blur in our image
+		 - Because the lower dimension latent space has limited information to fully reconstruct an image 
 
 ## Final Note
 - More recent VAEs use better image representations to reduce blur
