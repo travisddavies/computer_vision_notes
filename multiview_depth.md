@@ -34,12 +34,14 @@
 - **Intrinsic parameters**: camera parameters related to image formation (focal length, optical centre, lens distortion)
 - **Extrinsic parameters**: camera pose (location and orientation) relative to the world
 - Camera calibration is a process to find the intrinsic parameters
-- Usually, these parameters are learned from image data with unknown extrinsic parameters
+- Usually, these parameters are **learned** from image data with unknown extrinsic parameters
 
 ## Homogeneous Coordinates
+<iframe width="560" height="315" src="https://www.youtube.com/embed/JSLG8n_IY9s?si=4Q62gI-L0OI2p0Sx" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 - When converting between world and image points, it is often convenient to use **homogeneous** (or **projective**) coordinates
 - Image points are represented with 3 values ($x_i,y_i,z_i$)
 - The third value can be thought of as the distance to the image plane
+- Notice how the $x, y$ values scale from 2,1 to 4,2 when $z$ scales from 1 to 2
 
 ![[homogeneous_coords.png]]
 
@@ -110,10 +112,10 @@ $$
 	- Disadvantage: more difficult to detect/track keypoints, may introduce errors
 - Look up camera parameters from manufacturer specifications
 	- Advantage: no computation!
-	- Disadvantage: only for cameras with fixed focal length
+	- Disadvantage: only for cameras with fixed focal length (sometimes the manufacturers get it wrong as well)
 
 ## Summary
-- Camera calibration is used to recover a camera's intrinsic parameters, expressed as a camera matrix
+- Camera calibration is used to recover **a camera's intrinsic parameters**, expressed as a **camera matrix**
 - Calibration is required for application that involve accurate mapping between world and image points (e.g., augmented reality)
 
 # Epipolar Geometry - Basics
@@ -243,7 +245,7 @@ $$
 ![[solving_for_F.png]]
 
 - 8-point algorithm
-	- Requires 8 matching points
+	- Requires 8 matching points (**One more** than the 7 degrees of freedom)
 	- Solve for $F$ as a linear system of equations
 	- Additional steps (SVD = singular value decomposition) to ensure that $F$ has the correct form
 
@@ -287,3 +289,7 @@ $$
 - Epipolar geometry describes how a point in 3D space is imaged through a pair of cameras
 - Essential and Fundamental matrices map point in one image to a line (epipolar line) in the other image
 - Typically, use feature detection to find matching points in the two views, then solve for Fundamental matrix (e.g., using RANSAC)
+
+## Beyond two-view geometry
+- Structure from motion  
+- Simultaneous localisation and mapping (SLAM)

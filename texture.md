@@ -10,7 +10,7 @@
 
 # What is a Texture?
 - A definition from image processing:
-	Texture is a region with **spatial stationary** (same statistical properties everywhere in the region)
+	Texture is a region with **spatial stationary** (**same statistical properties** everywhere in the region)
 - A definition from computer graphics:
 	Texture is 2D surface applied to a 3D model
 
@@ -97,7 +97,7 @@ Select probable value for the missing pixel, based on similar patches:
 ![](https://upload.wikimedia.org/wikipedia/commons/b/bc/Imagequilting.gif)
 
 - The way we can hide this overlapping area being so visible as shown on the right-hand image is by: 
-	- Finding a cut along the overlap with provides the minimum error from to top to bottom of the image
+	- Finding a cut along the overlap with provides the minimum error (squared error) from to top to bottom of the image
 	 - Cutting from the first part and then the second part and then sewing the two parts together, as shown in the last picture
 
 ![[image_quilting_process.png]]
@@ -144,6 +144,8 @@ Select probable value for the missing pixel, based on similar patches:
 - We can use the Fourier transform to get parameters for texture
 - Below shows that by keeping the phase and randomising the magnitude, we actually can still keep the structure the image. However, we it doesn't really keep the actual appearance of the image. 
 - The texture of the image is maintained when we keep the magnitude and randomise the phase
+- Magnitude represents the statistical representation
+- Phase represents the structure
 
 ![[fourier_magnitude_parametric.png]]
 
