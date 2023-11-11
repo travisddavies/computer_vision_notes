@@ -30,7 +30,7 @@
 - The general parameters we can use to manipulate this wave are shown below:
 	- $A$ will influence the height of the wave
 	- $\omega$ will influence the frequency of the wave
-	- $\psi$ will influence the phase, i.e. where the beginning of the wave starts on the $x$ axis  
+	- $\psi$ will influence the phase, i.e. the y-intercept  
 
 ![[sinusoids2.png]]
 
@@ -104,7 +104,7 @@
 ![[images_as_sinusoids.png]]
 
 ## Fourier Transforms of Images
-- If we were to take the Fourier transform of these thee images, we will get the below images
+- If we were to take the Fourier transform of these these images, we will get the below images
 - All Fourier transforms in these images are reflected, so the left hand side will always look like the right hand side
 - Everywhere that is black represents zero values, except for the 3 peaks in the middle of the plots
 - If you compare the first image to the second, we can see that the 3 dots are further apart for the second one. This means that it has a higher frequency.
@@ -250,7 +250,7 @@ $$
 ![[Computer Vision/Images/image_forensics.png]]
 
 ## Dog vs. Hot Dog - What Changed?
-- Below shows a much clearer difference in the two images, this is why neural nets notice a difference!
+- Below shows a much clearer difference in the two images, this is why neural nets notice a difference! (Especially the difference in the **phase**) 
 
 ![[dog_v_hotdog_what_changed.png]]
 

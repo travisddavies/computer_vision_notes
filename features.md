@@ -126,6 +126,7 @@
 ![[sliding_window_descriptor.png]]
 
 ## Corner Detection
+<iframe width="560" height="315" src="https://www.youtube.com/embed/Z_HwkG90Yvw?si=7q92i5qkpjKoG7Lp" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 - Change in appearance of window $w(x,y)$ for the shift $[u,v]$:
 
 ![[corner_detection_error.png]]
@@ -225,6 +226,7 @@ As we can see in the change of window below, the intensity of the colours for ea
 ![[feature_descriptors_cockatoo.png]]
 
 ## Scale-Invariant Feature Transform (SIFT)
+<iframe width="560" height="315" src="https://www.youtube.com/embed/ram-jbLJjFg?si=C8MfwMxri5pweH-L" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 - Compute gradient, take histograms in a grid of pixels around interest point
 - Weight gradient magnitudes based on distance from centre of patch
 - Normalise histograms to sum to 1
@@ -317,4 +319,4 @@ $det(H) = 403 \times 381 - 385 \times 385 = 5318$
 $tr(H) = \text{sum of diagonals} = 403 + 381 = 784$
 $R = det(H) - K(tr(H))^2 = 5318 - 0.04 \times 784^2 = -19,268.24$
 
-Given that we got a negative value, $\lambda_1 + \lambda_2$ is obviously large compared to $\lambda_1 \lambda_2$. Therefore we can say that this is an edge
+Given that we got a negative value, $\lambda_1 + \lambda_2$ is obviously large compared to $\lambda_1 \lambda_2$ which indicates that either $\lambda_1 \ \text{or}\ \lambda_2$ is much greater than the other. Therefore we can say that this is an edge.

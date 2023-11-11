@@ -101,7 +101,7 @@ And with a little bit of tinkering, we can get out the edges image with the Houg
 ## Hough Transform Efficiency
 - Hough transform is a grid search for parameters
 - What happens as $N$ parameters increase?
-	- Basically since we need to perform a grid search for every possible combination in the search space, and $N$ represents the number of dimensions in the search space, increasing $N$ means that we would have to search for every combination in the $N$-dimensional search space.
+	- Basically since we need to perform a grid search for every possible combination in the search space, and $N$ represents the number of dimensions in the search space, increasing $N$ means that we would have to search for every combination in the $N$-dimensional search space ,i.e., **full grid search N times for N parameters**.
 	- Therefore, this algorithm becomes very unwieldy as we increase the number of parameters.
 
 ![[example_hough_transform.png]]
@@ -157,7 +157,7 @@ Step 1. Find keypoints + descriptors in each image
 
 ![[step1_feature_matching.png]]
 
-Step 2. Find candidate matches: for each keypoint in image 1, find most similar match in image 2
+Step 2. Find candidate matches: for each keypoint in image 1, find most similar match in image 2 (e.g. Using SIFT)
 
 ![[step2_feature_matching.png]]
 
@@ -279,3 +279,5 @@ $(1-p) = (1 - (1 - 0.4)^4)^{100}$
 $(1-p) = (1 - 0.6^4)^{100}$
 $p = 1 - (1 - 0.1296)^{100}$
 $p = 0.9999$
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/EkYXjmiolBg?si=WnzbgX3GYVeNu5m-" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
