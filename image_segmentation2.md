@@ -84,6 +84,7 @@
 ![[convolutional_review2.png]]
 
 ## Transposed Convolution
+<iframe width="560" height="315" src="https://www.youtube.com/embed/96_oGE8WyPg?si=wXwE4VN8hL7ICFfH" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 - Convolution with stride > 1 does a form of downsampling
 	- E.g., stride = 2 means filter 2 pixels in input for every 1 pixel in output
 	- "Learnable downsampling"
@@ -174,11 +175,12 @@ $$
 2. We have some conv blocks to process our image
 3. We then do some strided conv operations to downsample
 4. The bottom part is 1x1 conv operations
-5. We then do a transposed conv on the beginning of the right-hand side operations to upsample the outputs, but we also concatenate on the outputs of the equivalent left-hand side operations as input for the operation
-6. We repeat this process all the way back up to the top of the right-hand side output
+5. We then do a transposed conv on the beginning of the right-hand side operations to upsample the outputs, but we **also concatenate on the outputs** of the equivalent left-hand side operations as **input for the operation**
+6. We repeat this process all the way back up to the top of the right-hand side output (Creating a U-Shape)
 7. Finally we get a logits output as our result
 
 - This process allows our model get a lot of context about previous information, so this information isn't lost during downsampling
+- The architecture has addition information from the input itself along with the upsampled data
 
 ![[u-net-architecture.png]]
 
@@ -198,8 +200,8 @@ $$
 
 ## Side Note: Stuff and Things
 - Visual scenes include both "things" and "stuff"
-	- "Things" = objects, "countable nouns" (cow, person, car)
-	- "Stuff" regions/materials, "mass nouns (road, grass)
+	- "Things" = objects, "countable nouns" (cow, person, car) (We count these)
+	- "Stuff" regions/materials, "mass nouns (road, grass) (We don't count these)
 	- Some classes can be either (trees)
 - Instance segmentation (and computer vision in general) mainly focuses on "things"
 
@@ -219,7 +221,7 @@ $$
 
 ## Mask R-CNN
 - Mask R-CNN takes patches extracted by R-CNN and runs them through a fully-convolutional network
-- FCN predicts a binary segmentation mask ("object" or "background")
+- FCN predicts a **binary segmentation** mask ("object" or "background")
 - Mask R-CNN works by:
 	1. Taking a patch from an image from a bounding box and feeds it into a classifying CNN
 	 2. It then forms a mask over the area within that patch that it predicts are pixels that belong to a class

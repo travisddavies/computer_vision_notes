@@ -31,7 +31,7 @@
 
 ## Skeletonisation Algorithm
 - Grassfire transform - algorithm for shrinking or thinning a shape
-- For each pixel within the shape, compute distance to closest boundary; peaks in the distance map are the skeleton
+- For each pixel within the shape, compute distance to closest boundary; **peaks** in the distance map are the skeleton
 
 ![[skeletonisation_algorithm.png]]
 
@@ -59,7 +59,7 @@
 
 ![[drawbacks_to_skeletons.png]]
 
-- Small changes in shape boundary produce large changes in skeleton
+- Small changes in shape boundary produce large changes in skeleton (Occlusion Distorts the skeleton)
 
 ![[drawbacks_to_skeletons2.png]]
 
@@ -68,7 +68,7 @@
 - Skeleton representations work well to model shapes that have skeleton-like structure
 	- Human/animal figure
 	- Written characters
-	- Paths/networks (e.g., city roads, blood vessels)
+	- Paths/networks (e.g., city roads, blood vessels, also used in path planning in robotics) 
 
 # Contour Representations
 # Automatic Contour Detection?

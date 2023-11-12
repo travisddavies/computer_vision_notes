@@ -22,10 +22,13 @@
 # Pixel Clustering
 
 ## Colour Clustering
+- Cluster based on different colour distributions in the image
+- How do we perform this clustering? K-Means, Mean Shift etc.
 
 ![[colour_clustering.png]]
 
 ## K-means ($k = 6$)
+<iframe width="560" height="315" src="https://www.youtube.com/embed/22mpExWh1LY?si=ClMpEk5xfCdVrOQV" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 - K-means clustering works by setting $k$ number of clusters and then iteratively finding the centroid in their given regions. This is an algorithm that is efficient, but often can lead to inaccuracies when the number of clusters chosen is too high or too low. Furthermore, the initial locations of the cluster centres greatly impacts the effectiveness of the algorithm to find the right cluster centroids
 
 ![[k-means_6.png]]
@@ -36,6 +39,7 @@
 ![[gaussian_mixture_model_k6.png]]
 
 ## Mean Shift (bandwidth = 7)
+<iframe width="560" height="315" src="https://www.youtube.com/embed/PCNz_zttmtA?si=0go2i6EfZPrgt__W" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 - Mean shift works by finding the _mode_ of a density, and iteratively shifts points in the plot towards the closest mode. This results in a number of clusters and the ability to assign a sample to a cluster after fitting is complete. This also means that $k$ number of clusters do not need to be assigned to perform the algorithm
 
 ![[mean_shift_bandwidth7.png]]
@@ -93,7 +97,8 @@
 ![[mean_shift_parameters.png]]
 
 ## Important to Note:
-- Pixel clustering separates colour regions - regions may not correspond to objects
+- Pixel clustering separates colour regions - these colour regions may not correspond to objects as two objects in different coordinates may have the same colour, hence we may choose to include spatial coordinates of pixels as well
+- Putting more emphasis on coordinates produces a segmentation similar to the first image, relying only on colour produces the last image.
 - For example, a zebra with black and white stripes will cluster each stripe into many clusters
 
 # Superpixels
@@ -102,7 +107,7 @@
 - **Oversegmentation** methods segment image into regions that are smaller than objects
 	- Objects are separated from background
 	- But objects are also separated into many parts
-- Superpixels = groups of adjacent pixels with similar characteristics (e.g., colour)
+- Superpixels = groups of adjacent pixels with similar characteristics (e.g., colour or even texture)
 
 ## Superpixel Segmentation
 
@@ -111,7 +116,7 @@
 ## SLIC Superpixel Algorithm
 - Initialise cluster centres on non-edge pixels:
 	- Initialise $k$ cluster centres $c_k = [x_k, y_k, I_k, b_k]$ by sampling the image in a regular grid
-	- For each centre $c_k$, check an N x N neighbourhood around $c_k$ to find the pixel with lowest gradient. Set $c_k$ to this pixel's $[x,y,l,a,b]$
+	- For each centre $c_k$, check an N x N neighbourhood around $c_k$ to find the pixel with lowest gradient (areas where the change is smooth and not drastic). Set $c_k$ to this pixel's $[x,y,l,a,b]$
 
 - For each cluster centre $c_k$:
 	- In a $2M$ x $2M$ square neighbourhood around $c_k$, measure pixel similarity to $c_k$
@@ -143,7 +148,7 @@
 - To merge superpixels:
 	- Identify edges below a threshold and re-label superpixels connected by these edges as one region
 	- Or iteratively:
-		- Find lowest-weight edge, relabel connected superpixels as one region
+		- Find lowest-weight edge (greedy method), relabel connected superpixels as one region
 		- Recompute RAG, repeat until a criterion is met (e.g., all edges above a threshold)
 
 ![[superpixel_merging.png]]
@@ -224,5 +229,6 @@ $$
 ![[graphcut_example.png]]
 
 ## How to Get Labels?
+So far we looked at segmentation but how do we do semantic segmentation?
 - Unlabelled regions can be inputs to an object classification method
 - Or, segmentation and classification can be done simulateneously
