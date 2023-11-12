@@ -192,3 +192,19 @@
 	- Can be unstable / hard to train
 	- Difficult to evaluate
 	- Even models that don't show complete model collapse tend to have lower-than-desired diversity
+
+# Exercises
+## Exercise 1
+A Generative Adversarial Network is being trained. The developer observes that initially the Generator is creating images that look like patterned snow.  After some training, it is starting to generate blurry images that start to look like the training data. Later the quality of the generated  images increases but the diversity drops.
+
+i) How might the developer measure quality?
+
+A: Inception score
+
+ii) How might the developer measure diversity?
+
+A: Birthday paradox
+
+iii) Why might diversity drop during the later part of training?
+
+A: Discriminator overfits

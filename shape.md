@@ -202,3 +202,9 @@ $$
 	- It just creates more work for the CNN if the faces aren't aligned, more efficient to first align them
 
 ![[application_face_recognition2.png]]
+
+# Exercises
+## Exercise 1
+Most models for face recognition separate face shape from face texture. Explain why this separation is important.
+
+A: Allows variation due to lighting and pose to be "subtracted out" of the image -- faces can be warped to a canonical pose with uniform lighting and effectively learned/compared under identical viewpoint and lighting. This significantly improves recognition performance.

@@ -293,3 +293,14 @@ $$
 ## Beyond two-view geometry
 - Structure from motion  
 - Simultaneous localisation and mapping (SLAM)
+
+# Exercises
+## Exercise 1
+What is an epipolar line? Give a geometric explanation for why the intersection of epipolar lines in one image corresponds to the location of the optical centre of the other image's camera. Do not include formulas or computation in your answer.
+
+A: Epipolar line is the intersection between the plane formed by the optical centres of the two cameras and a matched point (or the baseline and a matched point) and the image plane. Different matched points produce different planes and different epipolar lines, but all of these planes must intersect at the baseline (because all of these planes include the baseline / camera optical centres). Therefore the intersection of epipolar lines in one image correponds to the intersection of the baseline with the image plane, or the projection of one camera's optical centre in the other camera's image.
+
+## Exercise 2
+Suppose you have a pair of images of the same scene, taken from two calibrated cameras 10 m apart. The translation direction and rotation between the two cameras is unknown. If you can match a number of points between the two images, is it possible to compute the distance to these points? Briefly explain how you would compute the distances to points, or explain why it is not possible to compute this. If your answer would depend on additional constraints, note these in your explanation.
+
+A: Compute the essential matrix from the matched points, decompose into rotation and translation between cameras. Since the baseline is known (10 m) and the cameras are calibrated, the distances to matched points can be traiangulated from their view ray in each camera. Constraints: requires a minimum number of matches (5-8 depending on algorithm) and the matches cannot be coplanar.
