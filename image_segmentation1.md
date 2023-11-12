@@ -44,6 +44,8 @@
 
 ![[mean_shift_bandwidth7.png]]
 
+![[mean_shift_result2.png]]
+
 ## Mean Shift Clustering
 
 ![[Computer Vision/Images/mean_shift_clustering.png]]
